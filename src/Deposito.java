@@ -22,7 +22,13 @@ public class Deposito extends Rekening implements Berbunga {
             if (b instanceof Deposito) {
                 Deposito d = (Deposito) b;
                 d.setSaldo(d.getSaldo() + (d.getSaldo() * (d.bungaPerBulan / 100.0)));
+
             }
         }
+    }
+    @Override
+    public boolean tarik(double jumlah) {
+        // Jalankan, jika muncul UnsupportedOperationException, biarkan atau tangani sesuai modul
+        throw new UnsupportedOperationException("Deposito tidak bisa ditarik sebelum jatuh tempo");
     }
 }
